@@ -38,11 +38,11 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Center(
           child: Container(
-            width: 150,
-            height: 320,
+            width: 190,
+            height: 400,
             decoration: BoxDecoration(
               color: const Color(0xff090909),
-              borderRadius: BorderRadius.circular(22),
+              borderRadius: BorderRadius.circular(28),
             ),
 
             child: Column(
@@ -50,15 +50,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 // Top image
                 Container(
-                  height: 70,
+                  height: 95,
                   width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(22),
-                      topRight: Radius.circular(22),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(28),
+                      topRight: Radius.circular(28),
                     ),
                     image: DecorationImage(
-                      image: AssetImage(planet.image),
+                      image: AssetImage(
+                        "assets/images/frame.png.png",
+                      ),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -66,12 +68,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: const Align(
                     alignment: Alignment.topCenter,
                     child: Padding(
-                      padding: EdgeInsets.only(top: 12),
+                      padding: EdgeInsets.only(top: 15),
                       child: Text(
                         "Explore",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 10,
+                          fontSize: 12,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -79,18 +81,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
 
                 // Question
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 12),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Which planet\nwould you like to explore?",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 10,
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -103,14 +105,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: Image.asset(
                     planet.image,
-                    width: 105,
+                    width: 125,
                     fit: BoxFit.contain,
                   ),
                 ),
 
                 // Planet name + arrows
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -124,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         planet.name,
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 10,
+                          fontSize: 12,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -137,14 +139,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: 12),
 
                 // Explore button
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: SizedBox(
                     width: double.infinity,
-                    height: 25,
+                    height: 32,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -167,24 +169,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment:
+                            MainAxisAlignment.spaceBetween,
                         children: [
+
                           Padding(
-                            padding: const EdgeInsets.only(left: 10),
+                            padding:
+                                const EdgeInsets.only(left: 12),
                             child: Text(
                               "Explore ${planet.name}",
                               style: const TextStyle(
-                                fontSize: 9,
+                                fontSize: 10,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
 
                           const Padding(
-                            padding: EdgeInsets.only(right: 8),
+                            padding:
+                                EdgeInsets.only(right: 10),
                             child: Icon(
                               Icons.arrow_forward,
-                              size: 13,
+                              size: 15,
                             ),
                           ),
                         ],
@@ -193,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                const SizedBox(height: 9),
+                const SizedBox(height: 12),
               ],
             ),
           ),
@@ -209,8 +215,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: 17,
-        height: 17,
+        width: 21,
+        height: 21,
         decoration: const BoxDecoration(
           color: Color(0xfff83d3d),
           shape: BoxShape.circle,
@@ -218,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Icon(
           icon,
           color: Colors.white,
-          size: 11,
+          size: 13,
         ),
       ),
     );
